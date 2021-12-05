@@ -53,6 +53,6 @@ Save the docker image to file:
 $ docker save aio2-tfidf-baseline | gzip > aio2-tfidf-baseline.tar.gz
 ```
 
-## LICENSE
+## License
 
 The codes in this repository are open-sourced under MIT License.
