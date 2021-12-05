@@ -138,4 +138,5 @@ dmypy.json
 cython_debug/
 
 # custom paths
-model/
+model/*
+!model/README.md
