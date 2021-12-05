@@ -1,6 +1,6 @@
 # AIO2 TF-IDF Baseline
 
-This is a very simple question answering system, which is developed as a lightweight baseline for AIO2 competition.
+This is a very simple question answering system, which is developed as a lightweight baseline for [AIO2 competition](https://sites.google.com/view/project-aio/competition2).
 
 In the training stage, the model builds a sparse matrix of TF-IDF features from the questions in training dataset.
 In the inference stage, the model predicts answers of unseen questions by finding the most similar training question to the input by computing dot product scores of TF-IDF features.
