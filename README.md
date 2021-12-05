@@ -2,9 +2,10 @@
 
 This is a very simple question answering system, which is developed as a lightweight baseline for AIO2 competition.
 
-In training stage, the model builds a sparse matrix of TF-IDF features from the questions in training dataset.
-In inference stage, the model predicts answers of unseen questions by finding the most similar training question to the input one by computing dot product of TF-IDF features.
-Therefore, the model will not be able to predict completely unseen answers.
+In the training stage, the model builds a sparse matrix of TF-IDF features from the questions in training dataset.
+In the inference stage, the model predicts answers of unseen questions by finding the most similar training question to the input by computing dot product scores of TF-IDF features.
+
+Therefore, in principle, the model cannot predict answers unseen in the training data.
 
 ## Steps to experiment with the model
 
@@ -43,5 +44,11 @@ $ docker build -t aio2-tfidf-baseline .
 Test locally:
 
 ```sh
-$ docker run --rm -v "<input_dir>:/app/input" -v "<output_dir>:/app/output" aio2-tfidf-baseline bash ./submission.sh input/aio_02_dev_unlabeled_v1.0.jsonl output/predictions.jsonl
+$ docker run --rm -v "<data dir absolute path>:/app/input" -v "<output dir absolute path>:/app/output" aio2-tfidf-baseline bash ./submission.sh input/aio_02_dev_unlabeled_v1.0.jsonl output/predictions.jsonl
+```
+
+Save the docker image to file:
+
+```sh
+$ docker save aio2-tfidf-baseline | gzip > aio2-tfidf-baseline.tar.gz
 ```
